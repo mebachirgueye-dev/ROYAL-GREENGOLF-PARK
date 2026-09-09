@@ -1,13 +1,35 @@
-export interface GolfHole {
-  id: number;
+export interface Hole {
   number: number;
-  par: number;
+  par: 3 | 4 | 5;
   distance: number; // meters
-  difficulty: 'Easy' | 'Moderate' | 'Difficult' | 'Expert';
+  difficulty: "Douce" | "Modérée" | "Exigeante";
   description: string;
-  // relative position on the course map image (percentage)
-  x: number;
-  y: number;
+  /** Position of the marker over the course map, in percent (top/left). */
+  position: { top: number; left: number };
+}
+
+export type GalleryCategory =
+  | "Parcours"
+  | "Golf"
+  | "Club House"
+  | "Restaurant"
+  | "Événements";
+
+export interface GalleryImage {
+  id: string;
+  src: string;
+  alt: string;
+  category: GalleryCategory;
+  /** Controls the asymmetric grid span. */
+  size: "sm" | "md" | "lg" | "wide" | "tall";
+}
+
+export interface Testimonial {
+  id: string;
+  firstName: string;
+  profession: string;
+  rating: number;
+  comment: string;
 }
 
 export interface ExperienceItem {
@@ -15,27 +37,10 @@ export interface ExperienceItem {
   title: string;
   description: string;
   image: string;
-  icon: string;
+  targetId: string;
 }
 
-export interface GalleryImage {
-  id: string;
-  src: string;
-  alt: string;
-  category: 'Parcours' | 'Golf' | 'Club House' | 'Restaurant' | 'Événements';
-  width?: 'normal' | 'wide' | 'tall';
-}
-
-export interface Testimonial {
-  id: string;
-  name: string;
-  profession: string;
-  rating: number;
-  comment: string;
-  avatar: string;
-}
-
-export interface ReservationForm {
+export interface BookingFormState {
   date: string;
   time: string;
   players: string;
@@ -44,5 +49,3 @@ export interface ReservationForm {
   email: string;
   phone: string;
 }
-
-export type GalleryCategory = 'Tous' | 'Parcours' | 'Golf' | 'Club House' | 'Restaurant' | 'Événements';

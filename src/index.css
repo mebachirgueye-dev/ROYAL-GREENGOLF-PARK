@@ -1,284 +1,64 @@
-/* stylelint-disable */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Royal Green Golf Park — Design System */
-
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
-
 @layer base {
-  :root {
-    --radius: 0.375rem;
-
-    /* Core palette — golf luxury: deep forest green + warm sand + gold */
-    --background: 40 20% 97%;          /* warm off-white #F7F5F1 */
-    --foreground: 160 25% 10%;         /* near-black with green tint #131F19 */
-    --card: 0 0% 100%;
-    --card-foreground: 160 25% 10%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 160 25% 10%;
-
-    /* Primary = deep forest green */
-    --primary: 151 28% 23%;            /* #2D4A38 */
-    --primary-foreground: 40 20% 97%;
-
-    /* Secondary = warm sand */
-    --secondary: 35 30% 91%;           /* #EDE6D8 */
-    --secondary-foreground: 160 25% 10%;
-
-    /* Accent = gold */
-    --accent: 42 55% 52%;              /* #C4993A */
-    --accent-foreground: 0 0% 100%;
-
-    --muted: 40 15% 93%;               /* #EDEAE4 */
-    --muted-foreground: 155 12% 42%;   /* #5C7065 */
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 40 18% 86%;              /* #DDD8CF */
-    --input: 40 18% 86%;
-    --ring: 151 28% 23%;
-
-    /* Sidebar (not used but required) */
-    --sidebar-background: 151 28% 20%;
-    --sidebar-foreground: 40 20% 97%;
-    --sidebar-primary: 42 55% 52%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 151 20% 27%;
-    --sidebar-accent-foreground: 40 20% 97%;
-    --sidebar-border: 151 20% 27%;
-    --sidebar-ring: 42 55% 52%;
-
-    /* Custom tokens */
-    --forest: 155 35% 18%;             /* #1A3A28 deep forest */
-    --gold: 42 55% 52%;                /* #C4993A */
-    --sand: 35 30% 88%;                /* #E8DFC8 */
-    --cream: 40 25% 95%;               /* #F5F0E8 */
-
-    --shadow-card: 0 2px 16px rgba(29, 54, 38, 0.08);
-    --shadow-hover: 0 8px 32px rgba(29, 54, 38, 0.18);
-    --gradient-primary: linear-gradient(135deg, hsl(155 35% 18%), hsl(151 28% 30%));
-    --gradient-card: linear-gradient(180deg, rgba(29,58,40,0) 60%, rgba(20,40,28,0.85) 100%);
-    --gradient-background: linear-gradient(180deg, hsl(40 20% 97%) 0%, hsl(40 15% 93%) 100%);
-
-    --chart-1: 151 28% 23%;
-    --chart-2: 42 55% 52%;
-    --chart-3: 35 30% 60%;
-    --chart-4: 155 35% 35%;
-    --chart-5: 40 30% 70%;
-  }
-
-  .dark {
-    --background: 155 30% 8%;
-    --foreground: 40 20% 95%;
-    --card: 155 25% 11%;
-    --card-foreground: 40 20% 95%;
-    --popover: 155 25% 11%;
-    --popover-foreground: 40 20% 95%;
-    --primary: 151 28% 48%;
-    --primary-foreground: 155 30% 8%;
-    --secondary: 155 20% 16%;
-    --secondary-foreground: 40 20% 95%;
-    --accent: 42 55% 52%;
-    --accent-foreground: 0 0% 100%;
-    --muted: 155 20% 16%;
-    --muted-foreground: 40 15% 65%;
-    --destructive: 0 62% 30%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 155 20% 18%;
-    --input: 155 20% 18%;
-    --ring: 151 28% 48%;
-    --sidebar-background: 155 30% 6%;
-    --sidebar-foreground: 40 20% 95%;
-    --sidebar-primary: 42 55% 52%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 155 20% 12%;
-    --sidebar-accent-foreground: 40 20% 95%;
-    --sidebar-border: 155 20% 14%;
-    --sidebar-ring: 42 55% 52%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
   html {
     scroll-behavior: smooth;
   }
-  body {
-    @apply bg-background text-foreground;
-    font-family: 'Inter', system-ui, sans-serif;
-    cursor: none;
+
+  ::selection {
+    background-color: #163325;
+    color: #f1ecdf;
   }
-  h1, h2, h3, h4, h5 {
-    font-family: 'Playfair Display', Georgia, serif;
+
+  /* Visible, elegant keyboard focus — never remove focus outlines */
+  :focus-visible {
+    outline: 2px solid #a9822e;
+    outline-offset: 3px;
   }
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: hsl(var(--border)) transparent;
+
+  h1, h2, h3, h4 {
+    font-family: "Fraunces", serif;
+    letter-spacing: -0.01em;
   }
-  *::-webkit-scrollbar { width: 6px; }
-  *::-webkit-scrollbar-track { background: transparent; }
-  *::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 3px; }
 }
 
-/* Custom cursor */
-.custom-cursor {
-  width: 12px;
-  height: 12px;
-  background: hsl(var(--accent));
-  border-radius: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 99999;
-  transform: translate(-50%, -50%);
-  transition: width 0.2s ease, height 0.2s ease, background 0.2s ease, opacity 0.2s ease;
-  mix-blend-mode: multiply;
-}
-.custom-cursor-ring {
-  width: 36px;
-  height: 36px;
-  border: 1.5px solid hsl(var(--accent) / 0.6);
-  border-radius: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 99998;
-  transform: translate(-50%, -50%);
-  transition: width 0.35s ease, height 0.35s ease, transform 0.08s ease, border-color 0.2s ease;
-}
-.custom-cursor.hovering {
-  width: 20px;
-  height: 20px;
-  background: hsl(var(--primary));
-}
-.custom-cursor-ring.hovering {
-  width: 52px;
-  height: 52px;
-  border-color: hsl(var(--primary) / 0.4);
-}
-.custom-cursor.clicking {
-  width: 8px;
-  height: 8px;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Reveal-on-scroll: elements start hidden, .is-visible triggers the animation.
+     Applied via the useScrollReveal hook. */
+  .reveal {
+    opacity: 0;
+  }
+  .reveal.is-visible {
+    animation: fade-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
 }
 
-/* Scroll reveal */
-.reveal {
-  opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal-left {
-  opacity: 0;
-  transform: translateX(-40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.reveal-left.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-.reveal-right {
-  opacity: 0;
-  transform: translateX(40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.reveal-right.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-
-/* Gold text */
-.text-gold {
-  color: hsl(var(--gold));
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+  }
 }
 
-/* Parallax container */
-.parallax-bg {
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+/* Thin custom scrollbar for the lightbox filmstrip / horizontal scrollers */
+.thin-scrollbar::-webkit-scrollbar {
+  height: 4px;
 }
-
-/* Overlay gradient on cards */
-.card-overlay {
-  background: var(--gradient-card);
-}
-
-/* Experience card hover */
-.experience-card {
-  overflow: hidden;
-  cursor: none;
-}
-.experience-card img {
-  transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
-}
-.experience-card:hover img {
-  transform: scale(1.07);
-}
-
-/* Gallery grid item hover */
-.gallery-item {
-  overflow: hidden;
-  cursor: none;
-}
-.gallery-item img {
-  transition: transform 0.5s ease;
-}
-.gallery-item:hover img {
-  transform: scale(1.05);
-}
-
-/* Stat counter */
-.stat-number {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 3rem;
-  font-weight: 700;
-  color: hsl(var(--accent));
-  line-height: 1;
-}
-
-/* Gold divider */
-.gold-divider {
-  width: 60px;
-  height: 2px;
-  background: hsl(var(--gold));
-  display: block;
-}
-
-/* Section label */
-.section-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: hsl(var(--accent));
-}
-
-/* Form focus styles */
-input:focus, select:focus, textarea:focus {
-  outline: none;
-  border-color: hsl(var(--primary));
-  box-shadow: 0 0 0 3px hsl(var(--primary) / 0.15);
-}
-
-/* Lightbox */
-.lightbox-overlay {
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(241, 236, 223, 0.4);
+  border-radius: 2px;
 }
