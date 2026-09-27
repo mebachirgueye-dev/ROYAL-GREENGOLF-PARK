@@ -19,9 +19,9 @@ export default function CoursePresentation() {
           <RevealSection className="relative lg:col-span-7 lg:pb-20">
             <div className="relative">
               <img
-                src="/images/course-aerial.jpg"
+                src="./images/course-aerial.jpg"
                 alt="Vue aérienne du parcours de Royal Green Golf Park entouré d'arbres matures"
-                className="aspect-[4/3] w-full object-cover sm:aspect-[16/10]"
+                className="aspect-[4/3] w-full object-contain sm:aspect-[16/10]"
               />
               <div className="absolute -bottom-8 -right-4 hidden w-56 border border-gold-500/40 bg-sand-50 px-6 py-5 shadow-[0_20px_50px_-20px_rgba(10,23,18,0.35)] sm:-right-8 sm:block">
                 <p className="font-display text-3xl text-pine-900">72</p>

@@ -16,9 +16,9 @@ export default function DiscoveryOffer() {
         <RevealSection className="lg:col-span-6 lg:order-2">
           <div className="relative aspect-[4/3] overflow-hidden sm:aspect-[16/11]">
             <img
-              src="/images/bunker-sunset.jpg"
+              src="./images/bunker-sunset.jpg"
               alt="Bunkers de sable illuminés par la lumière dorée du soleil couchant"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-contain"
             />
             <div className="absolute inset-0 ring-1 ring-inset ring-sand-50/10" />
           </div>

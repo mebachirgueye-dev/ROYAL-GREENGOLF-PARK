@@ -45,9 +45,9 @@ export default function Restaurant() {
 
           <RevealSection delay={120} className="relative lg:col-span-7 lg:pt-16">
             <img
-              src="/images/clubhouse-lake.jpg"
+              src="./images/clubhouse-lake.jpg"
               alt="Restaurant du club house avec terrasse donnant sur le plan d'eau et le parcours"
-              className="aspect-[4/3] w-full object-cover sm:aspect-[16/10]"
+              className="aspect-[4/3] w-full object-contain sm:aspect-[16/10]"
             />
           </RevealSection>
         </div>

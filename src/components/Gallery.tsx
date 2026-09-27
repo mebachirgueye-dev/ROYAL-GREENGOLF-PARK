@@ -65,7 +65,7 @@ export default function Gallery() {
               <img
                 src={image.src}
                 alt={image.alt}
-                className="h-full w-full object-cover transition-transform duration-700 ease-smooth group-hover:scale-110"
+                className="h-full w-full object-contain"
               />
               <div className="absolute inset-0 bg-pine-950/0 transition-colors duration-300 group-hover:bg-pine-950/20" />
               <span className="absolute bottom-2 left-2 bg-pine-950/70 px-2 py-1 text-[0.7rem] font-medium text-sand-100 opacity-0 transition-opacity duration-300 group-hover:opacity-100">

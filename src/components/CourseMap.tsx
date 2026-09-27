@@ -53,7 +53,7 @@ export default function CourseMap() {
             <div className="relative border border-pine-800/10 bg-sand-50 p-4 sm:p-8">
               <div className="relative mx-auto aspect-[512/299] w-full max-w-2xl">
                 <img
-                  src="/images/course-map.png"
+                  src="./images/course-map.png"
                   alt="Illustration stylisée du tracé des 18 trous de Royal Green Golf Park"
                   className="h-full w-full object-contain"
                 />

@@ -16,6 +16,10 @@ npm run dev
 
 Le site est alors disponible sur `http://localhost:5173`.
 
+Pour l'ouvrir avec l'extension Live Server de VS Code, générez d'abord le
+site statique avec `npm run build`, puis ouvrez `dist/index.html` avec Live
+Server. Le dossier `dist/` est régénéré à chaque build.
+
 Autres commandes :
 
 ```bash

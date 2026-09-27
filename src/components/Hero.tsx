@@ -8,9 +8,9 @@ export default function Hero() {
       className="relative flex min-h-[100svh] items-end overflow-hidden bg-pine-950"
     >
       <img
-        src="/images/hero-fairway.jpg"
+        src="./images/hero-fairway.jpg"
         alt="Fairway verdoyant bordé d'arbres, baigné de lumière dorée en fin de journée"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-contain"
       />
       {/* Subtle dark overlay for text legibility, per brief */}
       <div className="absolute inset-0 bg-gradient-to-t from-pine-950 via-pine-950/55 to-pine-950/25" />

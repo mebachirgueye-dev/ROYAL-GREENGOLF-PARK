@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/images/course-map.png" />
+    <link rel="icon" type="image/png" href="./images/course-map.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Royal Green Golf Park — Golf, restaurant &amp; événements d'exception</title>
@@ -19,7 +19,7 @@
       property="og:description"
       content="Découvrez un parcours d'exception, un cadre naturel unique et une expérience pensée pour les passionnés de golf."
     />
-    <meta property="og:image" content="/images/hero-fairway.jpg" />
+    <meta property="og:image" content="./images/hero-fairway.jpg" />
 
     <meta name="theme-color" content="#0f2119" />
 
@@ -32,6 +32,11 @@
   </head>
   <body class="bg-sand-50 font-body text-pine-950 antialiased">
     <div id="root"></div>
+    <script>
+      if (window.location.port === "5500" && window.location.pathname === "/index.html") {
+        window.location.replace("./dist/index.html");
+      }
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -38,9 +38,9 @@ export default function Events() {
         <RevealSection delay={180} className="relative mt-14">
           <div className="relative aspect-[16/9] overflow-hidden sm:aspect-[21/9]">
             <img
-              src="/images/clubhouse-lake.jpg"
+              src="./images/clubhouse-lake.jpg"
               alt="Espace de réception du club house au bord de l'eau, propice aux événements privés"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-contain"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-pine-950/60 via-transparent to-transparent" />
           </div>
